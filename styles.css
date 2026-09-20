@@ -1,0 +1,980 @@
+:root{
+  --red:#d90812;--red-dark:#9f0008;--ink:#121417;--muted:#686d73;--line:#e8e8e8;
+  --paper:#fff;--soft:#f5f5f3;--black:#0b0c0e;--radius:20px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+a{color:inherit;text-decoration:none}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{
+  position:relative;
+  z-index:1000;
+  padding-bottom:0px;
+}
+
+/* Bara neagră - apare doar în poziția inițială */
+.top-bar{
+  background:#0b0c0e;
+  color:#fff;
+  height:42px;
+  font-size:11px;
+  letter-spacing:.06em;
+}
+
+.top-bar-inner{
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.top-info,
+.top-contact{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.top-info span,
+.top-contact span{
+  white-space:nowrap;
+}
+
+.top-bar i{
+  width:1px;
+  height:14px;
+  background:#444;
+  display:block;
+}
+
+
+/* Navbar */
+.nav-wrapper{
+  position:relative;
+  z-index:1000;
+
+  background:rgba(255,255,255,.96);
+
+  border:0;
+  border-radius:0;
+
+  box-shadow:none;
+
+   top .7s cubic-bezier(.22,1,.36,1),
+  left .7s cubic-bezier(.22,1,.36,1),
+  right .7s cubic-bezier(.22,1,.36,1),
+  border-radius .7s cubic-bezier(.22,1,.36,1),
+  background .7s ease,
+  box-shadow .7s ease;
+}
+
+.nav{
+  height: 55px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+
+  transition:height .3s ease;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  height:100%;
+}
+
+.brand img{
+  display:block;
+  width:300px;
+  height:auto;
+  max-height:72px;
+  object-fit:contain;
+
+  transition:
+    width .3s ease,
+    max-height .3s ease;
+}
+.nav nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav nav a{
+  position:relative;
+}
+
+.nav nav a:not(.nav-cta):after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-8px;
+  height:2px;
+  background:#d90812;
+  transition:.25s;
+}
+
+.nav nav a:not(.nav-cta):hover:after{
+  right:0;
+}
+
+.nav-cta{
+  background:#d90812;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:5px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:26px;
+  cursor:pointer;
+}
+.nav{height:100px;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand img{display:block;width:min(300px,42vw);height:auto}.nav nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700}.nav nav a:not(.nav-cta){position:relative}.nav nav a:not(.nav-cta):after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:var(--red);transition:.25s}.nav nav a:not(.nav-cta):hover:after{right:0}.nav-cta{background:var(--ink);color:white;padding:12px 18px;border-radius:999px}.menu-btn{display:none;border:0;background:none;font-size:26px}
+.hero{position:relative;overflow:hidden;background:var(--black);color:white;min-height:700px;display:flex;align-items:center}.hero-grid{position:absolute;inset:0;background:linear-gradient(115deg,rgba(216,8,18,.18),transparent 45%),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:auto,70px 70px,70px 70px;mask-image:linear-gradient(to right,#000 0%,#000 70%,transparent 100%)}.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:90px 0}.eyebrow,.section-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.2em;font-weight:800}.eyebrow{color:#ddd;display:flex;gap:10px;align-items:center}.eyebrow span{width:30px;height:2px;background:var(--red)}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.055em;max-width:850px;margin:24px 0}.hero h1 em,h2 em{font-style:normal;color:var(--red)}.lead{font-size:19px;color:#c9c9c9;max-width:670px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 55px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:14px 21px;border-radius:999px;font-weight:800;font-size:14px;transition:.2s}.btn-primary{background:var(--red);color:#fff}.btn-primary:hover{background:#f01620;transform:translateY(-1px)}.btn-dark{background:var(--ink);color:#fff}.btn-ghost{border:1px solid #444;color:#fff}.btn-outline{border:1px solid #ccc;background:#fff}.btn.full{width:100%}.trust-row{display:flex;gap:38px;border-top:1px solid #303236;padding-top:25px}.trust-row div{display:flex;flex-direction:column}.trust-row strong{font-size:24px;letter-spacing:-.04em}.trust-row span{font-size:12px;color:#8e9297;text-transform:uppercase;letter-spacing:.08em}.hero-art{min-height:430px;position:relative;display:flex;align-items:center;justify-content:center}.voltage-ring{position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;aspect-ratio:1}.r1{width:370px}.r2{width:530px;border-color:rgba(216,8,18,.25)}.bolt{font-size:250px;line-height:1;color:var(--red);font-weight:900;transform:skewX(-7deg);text-shadow:0 0 80px rgba(216,8,18,.22)}.art-card{position:absolute;right:0;bottom:15px;background:white;color:var(--ink);padding:20px 22px;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.35);min-width:190px}.art-label{font-size:10px;letter-spacing:.16em;font-weight:900;color:var(--red);display:block}.art-card b{display:block;font-size:32px;letter-spacing:-.06em;margin-top:5px}.art-card small{color:var(--muted)}
+.section{padding:115px 0}.two-col{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.section-kicker{color:var(--red);margin-bottom:18px}.section h2{font-size:clamp(38px,4.8vw,64px);line-height:1.02;letter-spacing:-.05em;margin-bottom:25px}.section-text{font-size:18px;color:#565b61;max-width:700px}.mini-stats{display:flex;gap:45px;margin-top:45px;padding-top:28px;border-top:1px solid var(--line)}.mini-stats div{display:flex;flex-direction:column}.mini-stats b{font-size:30px;letter-spacing:-.06em}.mini-stats span{font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.08em}
+.services{
+  background:var(--soft);
+}
+
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.section-head p{
+  max-width:420px;
+  color:var(--muted);
+  margin:0;
+}
+
+
+/* =========================
+   CARUSEL SERVICII
+   ========================= */
+
+.services-carousel{
+  position:relative;
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) 40px;
+  align-items:center;
+  gap:6px;
+  width:calc(100% + 92px);
+  margin-left:-46px;
+}
+
+.service-viewport{
+  width:100%;
+  overflow:hidden;
+}
+
+.service-grid{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  transition:transform .55s cubic-bezier(.22,1,.36,1);
+}
+
+.service-card{
+  flex:0 0 calc((min(100%, 1160px) - 42px) / 4);
+  width:calc((min(100%, 1160px) - 42px) / 4);
+  background:#fff;
+  border:1px solid var(--line);
+  padding:30px;
+  border-radius:var(--radius);
+  min-height:300px;
+  position:relative;
+  transition:transform .25s, box-shadow .25s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 50px rgba(0,0,0,.08);
+}
+
+.service-card>span{
+  position:absolute;
+  top:22px;
+  right:25px;
+  color:#aaa;
+  font-size:11px;
+  font-weight:900;
+}
+
+.service-icon{
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  background:#fff0f0;
+  color:var(--red);
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  font-weight:900;
+  margin-bottom:45px;
+}
+
+.service-card h3{
+  font-size:21px;
+  letter-spacing:-.03em;
+}
+
+.service-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+
+/* Săgeți */
+
+.service-arrow{
+  width:44px;
+  height:44px;
+  border:1px solid #ddd;
+  border-radius:50%;
+  background:#fff;
+  color:var(--ink);
+  font-size:22px;
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.service-arrow:hover{
+  background:var(--red);
+  color:#fff;
+  border-color:var(--red);
+  transform:scale(1.05);
+}
+
+.service-arrow:disabled{
+  opacity:.25;
+  cursor:default;
+  transform:none;
+}
+
+
+/* =========================
+   RESTUL PAGINII
+   ========================= */
+
+.portfolio{
+  background:#fff;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+}
+
+.empty-gallery{
+  grid-column:1/-1;
+  min-height:360px;
+  border:1px dashed #cfcfcf;
+  border-radius:24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px;
+  background:linear-gradient(135deg,#fafafa,#f3f3f3);
+}
+
+.empty-mark{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  margin-bottom:18px;
+}
+
+.empty-gallery h3{
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.empty-gallery p{
+  max-width:560px;
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+
+.statement{
+  background:var(--black);
+  color:#fff;
+  padding:110px 0;
+}
+
+.statement h2{
+  font-size:clamp(40px,5.5vw,72px);
+  line-height:1.03;
+  letter-spacing:-.05em;
+  margin:0;
+}
+
+.statement .section-kicker{
+  color:#999;
+}
+
+.statement em{
+  color:var(--red);
+  font-style:normal;
+}
+
+
+.contact{
+  background:var(--soft);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:90px;
+  align-items:start;
+}
+
+.contact p{
+  color:var(--muted);
+  max-width:550px;
+}
+
+.contact-card{
+  background:#fff;
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 15px 50px rgba(0,0,0,.06);
+}
+
+.contact-card div{
+  padding:17px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.contact-card span{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.contact-card strong{
+  font-size:17px;
+}
+
+
+footer{
+  background:var(--black);
+  color:#999;
+  padding:30px 0;
+}
+
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  font-size:12px;
+}
+
+.footer-inner img{
+  width:190px;
+  filter:brightness(0) invert(1);
+  opacity:.9;
+}
+
+.footer-inner a{
+  color:#fff;
+}
+
+
+/* =========================
+   ADMIN
+   ========================= */
+
+.admin-body{
+  background:var(--soft);
+  min-height:100vh;
+}
+
+.back-link{
+  font-size:14px;
+  font-weight:800;
+}
+
+.admin-main{
+  padding:80px 0;
+}
+
+.admin-container{
+  max-width:900px;
+}
+
+.admin-container>h1{
+  font-size:clamp(45px,6vw,70px);
+  line-height:1;
+  letter-spacing:-.05em;
+  margin:0 0 15px;
+}
+
+.admin-intro{
+  color:var(--muted);
+  max-width:650px;
+  margin-bottom:35px;
+}
+
+.admin-panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 15px 50px rgba(0,0,0,.05);
+}
+
+.admin-panel h2{
+  margin:0 0 20px;
+  letter-spacing:-.03em;
+}
+
+.admin-panel label{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.admin-panel input[type=password]{
+  border:1px solid #ccc;
+  border-radius:12px;
+  padding:14px;
+  font-size:16px;
+}
+
+.hidden{
+  display:none;
+}
+
+.error{
+  color:var(--red);
+  font-size:13px;
+  margin:12px 0 0;
+}
+
+.admin-top{
+  display:flex;
+  align-items:start;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.admin-top p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.dropzone{
+  margin-top:25px;
+  border:2px dashed #d0d0d0;
+  border-radius:20px;
+  padding:45px 25px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  text-align:center;
+}
+
+.dropzone input{
+  max-width:100%;
+  font-size:13px;
+}
+
+.drop-icon{
+  width:50px;
+  height:50px;
+  background:#fff0f0;
+  color:var(--red);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:25px;
+}
+
+.dropzone .btn{
+  margin-top:10px;
+}
+
+.dropzone span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+#uploadStatus{
+  font-size:13px;
+  margin:5px 0 0;
+}
+
+.admin-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+
+.admin-item{
+  position:relative;
+}
+
+.admin-item img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.delete-btn{
+  position:absolute;
+  top:9px;
+  right:9px;
+  border:0;
+  background:rgba(0,0,0,.75);
+  color:#fff;
+  border-radius:999px;
+  width:34px;
+  height:34px;
+  cursor:pointer;
+}
+
+
+/* =========================
+   NAVBAR LA SCROLL
+   ========================= */
+
+.nav-wrapper.scrolled{
+  background:rgba(255,255,255,.82);
+  box-shadow:0 10px 35px rgba(0,0,0,.14);
+  position:fixed;
+  top:6px;
+  left:20px;
+  right:20px;
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:16px;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  overflow:hidden;
+}
+
+.nav-wrapper.scrolled .nav{
+  height:68px;
+}
+
+.nav-wrapper.scrolled .brand img{
+  width:250px;
+  max-height:58px;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:900px){
+
+  .top-info{
+    display:none;
+  }
+
+  .top-bar-inner{
+    justify-content:center;
+  }
+
+  .top-contact{
+    font-size:10px;
+  }
+
+  .nav{
+    height:72px;
+  }
+
+  .brand img{
+    width:220px;
+    max-height:58px;
+  }
+
+  .nav nav{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero-inner,
+  .two-col,
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+
+  .hero-art{
+    min-height:300px;
+  }
+
+  /* 2 carduri pe rând în carusel */
+  .service-card{
+    flex-basis:calc((100% - 14px) / 2);
+    width:calc((100% - 14px) / 2);
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:20px;
+  }
+
+  .gallery,
+  .admin-gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+/* =========================
+   TELEFON
+   ========================= */
+
+@media(max-width:600px){
+
+  .container{
+    width:min(100% - 28px,1160px);
+  }
+
+  .nav{
+    height:70px;
+  }
+
+  .brand img{
+    width:220px;
+  }
+
+  .hero-inner{
+    padding:65px 0;
+  }
+
+  .hero h1{
+    font-size:49px;
+  }
+
+  .lead{
+    font-size:17px;
+  }
+
+  .trust-row{
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  .hero-art{
+    min-height:250px;
+  }
+
+  .bolt{
+    font-size:180px;
+  }
+
+  .r1{
+    width:250px;
+  }
+
+  .r2{
+    width:340px;
+  }
+
+  .art-card{
+    right:0;
+    bottom:0;
+    transform:scale(.9);
+    transform-origin:right bottom;
+  }
+
+  .section{
+    padding:75px 0;
+  }
+
+  /* 1 card pe rând */
+  .service-card{
+    flex-basis:100%;
+    width:100%;
+  }
+
+  .service-arrow{
+    width:40px;
+    height:40px;
+    font-size:20px;
+  }
+
+  .services-carousel{
+    grid-template-columns:40px minmax(0,1fr) 40px;
+    gap:8px;
+  }
+
+  .gallery,
+  .admin-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .mini-stats{
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-inner img{
+    width:160px;
+  }
+
+  .admin-top{
+    flex-direction:column;
+  }
+}
+/* =========================
+   CERTIFICARI & AUTORIZARI
+========================= */
+
+.certifications{
+  background:#f7f7f7;
+}
+
+.certification-group{
+  margin-top:55px;
+}
+
+.certification-group + .certification-group{
+  margin-top:75px;
+}
+
+.certification-group-title{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.certification-group-title > span{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#e30613;
+}
+
+.certification-group-title small{
+  display:block;
+  margin-bottom:3px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#999;
+}
+
+.certification-group-title h3{
+  margin:0;
+  font-size:28px;
+  line-height:1;
+  color:#111;
+}
+
+.certification-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.anre-card{
+  grid-column:auto;
+}
+
+.certification-card{
+  position:relative;
+  min-height:370px;
+  padding:28px;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:18px;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.certification-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:4px;
+  background:#e30613;
+}
+
+.certification-card:hover{
+  transform:translateY(-5px);
+  border-color:#d7d7d7;
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
+}
+
+.certification-logo{
+  height:245px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.certification-logo img{
+  display:block;
+  width:210px;
+  height:210px;
+  object-fit:contain;
+}
+
+.anre-card .certification-logo img{
+  width:190px;
+  height:190px;
+}
+
+.certification-content{
+  padding-top:18px;
+  border-top:1px solid #e8e8e8;
+}
+
+.certification-content span{
+  display:block;
+  margin-bottom:5px;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#999;
+}
+
+.certification-content h4{
+  margin:0;
+  font-size:26px;
+  line-height:1.1;
+  color:#111;
+}
+
+.certification-content p{
+  margin:7px 0 0;
+  font-size:14px;
+  color:#666;
+}
+
+
+/* ANRE - doua carduri */
+
+.certification-group:first-of-type .certification-cards{
+  grid-template-columns:repeat(2,1fr);
+  max-width:760px;
+}
+
+
+/* TABLETA */
+
+@media(max-width:900px){
+
+  .certification-cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .certification-group:first-of-type .certification-cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* TELEFON */
+
+@media(max-width:600px){
+
+  .certification-group{
+    margin-top:40px;
+  }
+
+  .certification-group + .certification-group{
+    margin-top:55px;
+  }
+
+  .certification-cards,
+  .certification-group:first-of-type .certification-cards{
+    grid-template-columns:1fr;
+  }
+
+  .certification-card{
+    min-height:330px;
+  }
+
+  .certification-logo{
+    height:215px;
+  }
+
+  .certification-logo img{
+    width:185px;
+    height:185px;
+  }
+
+}

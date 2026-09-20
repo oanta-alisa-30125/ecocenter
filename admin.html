@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Administrare galerie | ECOCENTER SERV</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-body">
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/"><img src="/logo.png" alt="ECOCENTER SERV SRL"></a>
+    <a href="/" class="back-link">← Înapoi la site</a>
+  </div>
+</header>
+<main class="admin-main">
+  <div class="container admin-container">
+    <div class="section-kicker">Zonă privată</div>
+    <h1>Administrare <em>lucrări</em></h1>
+    <p class="admin-intro">Aici vei încărca fotografiile proiectelor. Zona este protejată prin parolă și nu apare în meniul public.</p>
+
+    <section id="loginBox" class="admin-panel">
+      <h2>Autentificare</h2>
+      <form id="loginForm">
+        <label>Parolă de administrator<input id="password" type="password" autocomplete="current-password" required></label>
+        <button class="btn btn-dark" type="submit">Intră în administrare</button>
+        <p id="loginError" class="error"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="admin-panel hidden">
+      <div class="admin-top">
+        <div><h2>Galeria proiectelor</h2><p>Poți încărca până la 30 de imagini odată. JPG, PNG sau WEBP, max. 10 MB/imagine.</p></div>
+        <button id="logout" class="btn btn-outline">Ieșire</button>
+      </div>
+      <form id="uploadForm" class="dropzone">
+        <input id="photos" type="file" name="photos" accept="image/jpeg,image/png,image/webp" multiple>
+        <div class="drop-icon">↑</div>
+        <strong>Alege fotografiile</strong>
+        <span>sau trage-le aici</span>
+        <button class="btn btn-primary" type="submit">Încarcă fotografiile</button>
+        <p id="uploadStatus"></p>
+      </form>
+      <div id="adminGallery" class="admin-gallery"></div>
+    </section>
+  </div>
+</main>
+<script src="/admin.js"></script>
+</body>
+</html>
